@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-content>
+      <div class="player-header">
+        <h2>{{ player.type }}</h2>
+        <button mat-fab color="{{colorTheme}}" class="score">
+          {{ player.score }}
+        </button>
+      </div>
+      <h3 *ngIf="isPlayer; else elseSelection">Pick your weapon:</h3>
+      <ng-template #elseSelection><h3>Weapon:</h3></ng-template>
+      <div class="player-content">
+          <i
+            *ngFor="let weapon of weapons; index as i;"
+            [ngClass]="getClassName(i)"
+            (click)="pickWeapon(i)"
+            class="fa">
+            </i>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  

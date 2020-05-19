@@ -1,0 +1,32 @@
+.player-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.player-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .fa {
+        cursor: pointer;
+        font-size: 5em;
+
+        &.selected {
+            color: yellowgreen;
+        }
+
+        &.computer {
+            opacity: 0.5;
+            cursor: default;
+
+            &.selected {
+                color: orangered;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.score {
+    font-size: 1.5em;
+}
